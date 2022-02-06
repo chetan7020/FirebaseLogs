@@ -1,9 +1,11 @@
 package com.example.firebaselogs
 
+import android.app.ActivityOptions
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
@@ -21,5 +23,11 @@ class MainActivity : AppCompatActivity() {
         logo.startAnimation(topAnim)
         textLogo.startAnimation(bottomAnim)
         slogan.startAnimation(bottomAnim)
+        Handler().postDelayed({
+            val intent = Intent(this , LoginActivity::class.java)
+            startActivity(intent)
+        }, 2000)
+
+
     }
 }
